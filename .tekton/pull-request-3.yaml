@@ -2,7 +2,7 @@
 apiVersion: tekton.dev/v1beta1
 kind: PipelineRun
 metadata:
-  name: pac-pr-2
+  name: pac-pr-3
   annotations:
     # The event we are targeting as seen from the webhook payload
     # this can be an array too, i.e: [pull_request, push]
@@ -67,6 +67,7 @@ spec:
               image: registry.access.redhat.com/ubi8/ubi-micro:8.4
               workingDir: $(workspaces.source.path)
               script: |
+                sleep 30
                 exit 0 
   workspaces:
   - name: source
