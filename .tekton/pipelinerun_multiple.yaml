@@ -1,0 +1,43 @@
+---
+apiVersion: tekton.dev/v1beta1
+kind: PipelineRun
+metadata:
+  name: pipeline-1
+  annotations:
+    pipelinesascode.tekton.dev/target-namespace: "pac-e2e-ns-h7v69"
+    pipelinesascode.tekton.dev/on-target-branch: "[main]"
+    pipelinesascode.tekton.dev/on-event: "[pull_request]"
+spec:
+  pipelineSpec:
+    tasks:
+      - name: task
+        taskSpec:
+          steps:
+            - name: task
+              image: registry.access.redhat.com/ubi9/ubi-micro
+              script: |
+                echo "hello pipeline 1"
+                sleep 10
+                exit 0
+---
+apiVersion: tekton.dev/v1beta1
+kind: PipelineRun
+metadata:
+  name: pipeline-2
+  annotations:
+    pipelinesascode.tekton.dev/target-namespace: "%!s(MISSING)"
+    pipelinesascode.tekton.dev/on-target-branch: "[%!s(MISSING)]"
+    pipelinesascode.tekton.dev/on-event: "[%!s(MISSING)]"
+spec:
+  pipelineSpec:
+    tasks:
+      - name: task
+        taskSpec:
+          steps:
+            - name: task
+              image: registry.access.redhat.com/ubi9/ubi-micro
+              script: |
+                echo "hello pipeline 2"
+                sleep 10
+                exit 0
+
