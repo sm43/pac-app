@@ -4,9 +4,10 @@ kind: PipelineRun
 metadata:
   name: pac-app
   labels:
-    a: b
-    b: c
-    c: d
+    build.appstudio.redhat.com/commit_sha: '{{revision}}'
+    build.appstudio.redhat.com/pull_request_number: '{{pull_request_number}}'
+    build.appstudio.redhat.com/target_branch: '{{target_branch}}'
+    build.appstudio.redhat.com/commit_sha-1: '{{revision}}'
   annotations:
     build.appstudio.redhat.com/commit_sha: '{{revision}}'
     build.appstudio.redhat.com/pull_request_number: '{{pull_request_number}}'
