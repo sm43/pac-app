@@ -8,6 +8,8 @@ metadata:
     build.appstudio.redhat.com/pull_request_number: '{{pull_request_number}}'
     build.appstudio.redhat.com/target_branch: '{{target_branch}}'
     build.appstudio.redhat.com/commit_sha-1: '{{revision}}'
+    a: b
+    b: d
   annotations:
     build.appstudio.redhat.com/commit_sha: '{{revision}}'
     build.appstudio.redhat.com/pull_request_number: '{{pull_request_number}}'
@@ -16,6 +18,8 @@ metadata:
     pipelinesascode.tekton.dev/on-event: '[pull_request]'
     pipelinesascode.tekton.dev/on-target-branch: '[main]'
     pipelinesascode.tekton.dev/task: "git-clone"
+    a: b
+    b: d
 spec:
   params:
     # The variable with brackets are special to Pipelines as Code
