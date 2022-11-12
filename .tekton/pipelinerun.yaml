@@ -3,7 +3,7 @@ apiVersion: tekton.dev/v1beta1
 kind: PipelineRun
 metadata:
   name: pac-app
-  annotations:
+  annotations:asd
     # The event we are targeting as seen from the webhook payload
     # this can be an array too, i.e: [pull_request, push]
     pipelinesascode.tekton.dev/on-event: "[pull_request, push]"
