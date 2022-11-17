@@ -2,7 +2,7 @@
 apiVersion: tekton.dev/v1beta1
 kind: PipelineRun
 metadata:
-  name: abc
+  name: ghi
   annotations:
     pipelinesascode.tekton.dev/max-keep-runs: "3"
     pipelinesascode.tekton.dev/on-event: '[pull_request]'
