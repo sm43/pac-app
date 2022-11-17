@@ -16,7 +16,7 @@ spec:
             - name: task
               image: registry.access.redhat.com/ubi9/ubi-micro
               command: ["/bin/echo", "HELLOMOTO"]
-      - name: task
+      - name: taska
         taskSpec:
           steps:
             - name: task
