@@ -29,3 +29,9 @@ spec:
             - name: task
               image: registry.access.redhat.com/ubi9/ubi-micro
               command: ["/bin/echo", "HELLOMOTO"]
+            - name: task1
+              image: registry.access.redhat.com/ubi9/ubi-micro
+              script: |
+                echo "hello pipeline"
+                sleep 60
+                exit 0
